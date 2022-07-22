@@ -19,10 +19,11 @@ import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import FlagOutlinedIcon from '@mui/icons-material/FlagOutlined';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import SettingsBrightnessOutlinedIcon from '@mui/icons-material/SettingsBrightnessOutlined';
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
     flex: 1;
-    background-color: ${({ theme }) => theme.bg};
+    background-color: ${({ theme }) => theme.bgLighter};
     height: 100vh;
     color: ${({ theme }) => theme.text};
     font-size: 14px;
@@ -85,10 +86,12 @@ function Menu({ darkMode, setDarkMode }: { darkMode: boolean; setDarkMode: (dark
     return (
         <Container>
             <Wrapper>
-                <Logo>
-                    <Img src={OzTube} />
-                    OzTube
-                </Logo>
+                <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Logo>
+                        <Img src={OzTube} />
+                        OzTube
+                    </Logo>
+                </Link>
                 <Item>
                     <HomeIcon /> Home
                 </Item>
